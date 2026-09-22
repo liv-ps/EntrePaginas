@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Entre Páginas</title>
+
+
+    <!-- Fonte delicada -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+
+    <!-- Ícone -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="logo.png"
+    >
+
+
+    <!-- PWA -->
+
+    <link
+        rel="apple-touch-icon"
+        href="logo.png"
+    >
+
+    <link
+        rel="manifest"
+        href="manifest.json"
+    >
+
+    <meta
+        name="theme-color"
+        content="#c9276d"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================================
+         TELA PRINCIPAL
+    ================================================== -->
+
+    <div id="telaPrincipal">
+
+
+        <!-- CABEÇALHO -->
+
+        <header class="cabecalho">
+
+
+            <!-- elementos decorativos -->
+
+            <span class="decoracao decoracao-1">
+                ✦
+            </span>
+
+            <span class="decoracao decoracao-2">
+                ✧
+            </span>
+
+            <span class="decoracao decoracao-3">
+                ✿
+            </span>
+
+            <span class="decoracao decoracao-4">
+                ✦
+            </span>
+
+
+            <!-- imagem -->
+
+            <div class="logo-cabecalho">
+
+                <img
+                    src="logo.png"
+                    alt="Ilustração de uma leitora"
+                >
+
+            </div>
+
+
+            <!-- título -->
+
+            <div class="titulo-area">
+
+                <span class="detalhe-titulo">
+                    ✿
+                </span>
+
+                <h1>
+                    Entre Páginas
+                </h1>
+
+                <span class="linha-titulo"></span>
+
+                <p>
+                    meu diário de leituras
+                </p>
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- CONTEÚDO -->
+
+        <main>
+
+
+            <section class="lista-livros">
+
+
+                <div class="topo-estante">
+
+
+                    <div>
+
+                        <span class="mini-detalhe">
+                            ✦ minhas leituras
+                        </span>
+
+                        <h2>
+                            Minha estante
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        id="botaoAdicionar"
+                        class="botao-principal"
+                        type="button"
+                    >
+
+                        + Adicionar livro
+
+                    </button>
+
+
+                </div>
+
+
+                <div id="livros">
+
+                    <!-- Livros aparecerão aqui -->
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         TELA ADICIONAR LIVRO
+    ================================================== -->
+
+    <div
+        id="telaAdicionar"
+        class="tela-escondida"
+    >
+
+
+        <!-- CABEÇALHO -->
+
+        <header class="cabecalho cabecalho-novo-livro">
+
+
+            <button
+                id="botaoVoltar"
+                class="botao-voltar"
+                type="button"
+            >
+
+                ← Voltar
+
+            </button>
+
+
+            <div class="titulo-area">
+
+                <span class="detalhe-titulo">
+                    ✿
+                </span>
+
+                <h1>
+                    Novo livro
+                </h1>
+
+                <span class="linha-titulo"></span>
+
+                <p>
+                    uma nova história para guardar
+                </p>
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- FORMULÁRIO -->
+
+        <main>
+
+
+            <section class="adicionar-livro">
+
+
+                <form id="formLivro">
+
+
+                    <!-- CAPA -->
+
+                    <div class="campo">
+
+                        <label for="capa">
+                            Capa do livro
+                        </label>
+
+                        <input
+                            type="file"
+                            id="capa"
+                            accept="image/*"
+                        >
+
+                    </div>
+
+
+
+                    <!-- NOME -->
+
+                    <div class="campo">
+
+                        <label for="nome">
+                            Nome do livro
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            placeholder="Digite o nome do livro"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- AUTOR -->
+
+                    <div class="campo">
+
+                        <label for="autor">
+                            Autor
+                        </label>
+
+                        <input
+                            type="text"
+                            id="autor"
+                            placeholder="Digite o nome do autor"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- GÊNERO -->
+
+                    <div class="campo">
+
+                        <label for="genero">
+                            Gênero
+                        </label>
+
+                        <input
+                            type="text"
+                            id="genero"
+                            placeholder="Ex.: Romance"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- ESTRELAS -->
+
+                    <div class="campo">
+
+                        <label>
+                            Minha avaliação
+                        </label>
+
+
+                        <div
+                            id="estrelas"
+                            class="estrelas"
+                        >
+
+                            <span data-valor="1">★</span>
+
+                            <span data-valor="2">★</span>
+
+                            <span data-valor="3">★</span>
+
+                            <span data-valor="4">★</span>
+
+                            <span data-valor="5">★</span>
+
+                        </div>
+
+
+                        <p
+                            id="textoAvaliacao"
+                            class="texto-avaliacao"
+                        >
+                            Escolha uma avaliação
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- OPINIÃO -->
+
+                    <div class="campo">
+
+                        <label for="opiniao">
+                            Minha opinião
+                        </label>
+
+                        <textarea
+                            id="opiniao"
+                            rows="6"
+                            placeholder="O que você achou desse livro?"
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <!-- DATAS -->
+
+                    <div class="datas">
+
+
+                        <div class="campo">
+
+                            <label for="inicio">
+                                Início da leitura
+                            </label>
+
+                            <input
+                                type="date"
+                                id="inicio"
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="fim">
+                                Fim da leitura
+                            </label>
+
+                            <input
+                                type="date"
+                                id="fim"
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- SALVAR -->
+
+                    <button
+                        type="submit"
+                        class="botao-principal botao-salvar"
+                    >
+
+                        Adicionar à minha estante
+
+                    </button>
+
+
+                </form>
+
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
